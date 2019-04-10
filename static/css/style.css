@@ -1,0 +1,74 @@
+body{
+    width: 970px;
+    margin: 0px auto;
+    margin-top: 10px;
+    border: 2px solid brown;
+    box-shadow: 10px 10px 50px;
+    min-height: 500px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+input[type=submit] {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+
+  input[type=text], select, textarea {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  textarea{
+      width: 800px;
+      height: 70px;
+  }
+
+#cmform{
+    margin-left: 20px;
+}
+#bt1{
+    float: right;
+    margin-right: 152px;
+}
+#bt2{
+    float: right;
+    margin-right: 132px;
+}
+h5{
+    color: red;
+}
+.comment{
+    color: #4CAF50;
+    margin-left: 15px;
+}
+
+  
+  #bt1:hover {
+    background-color: rgb(3, 172, 104);
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+  #bt2:hover {
+    background-color: rgb(236, 72, 8);
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }

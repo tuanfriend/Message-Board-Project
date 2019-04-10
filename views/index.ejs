@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message Board</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <h1>The Dojo Message Board</h1>
+    <hr>
+    <% if(messages.addmess) { %>
+        <% for (var x of messages.addmess) { %>
+        <h5><%= x %></h5>
+        <% } %>
+        <% } %>
+
+    <form action="/btmess" method="POST">
+    Name:<br><input name="mename" type="text"><br>
+    Message: <br> <textarea name="mecontent"></textarea><br><br>
+    <input id="bt1" type="submit" value="Post Message">
+    </form>
+    <br>
+    <!-- for loop all message -->
+    <% for (var x in allmess) { %>
+        <div class="message">
+            <h3><b>Name: </b><%= allmess[x].mename %></h3>
+            <h3><b>Message: </b><%= allmess[x].mecontent %> </h3>
+        </div>
+        
+            <!-- For loop all comment -->
+            <% for (var k = 0; k < allmess[x].comments.length; k++) { %>
+                <div class="comment">
+                    <h4>Name CM: <%= allmess[x].comments[k].cmname %> </h4>
+                    <h4>Comment: <%= allmess[x].comments[k].cmcontent %> </h4>
+                </div>
+                <% } %>
+
+        
+
+        <% if(messages.addcm) { %>
+            <% for (var y of messages.addcm) { %>
+            <h5><%= y %></h5>
+            <% } %>
+            <% } %>
+
+        <form id="cmform" action="/btcomment/<%= allmess[x]._id %>" method="POST">
+            Comment Name:<br><input name="cmname" type="text"><br>
+            Comment: <br> <textarea name="cmcontent"></textarea><br><br>
+            <input id="bt2" type="submit" value="Post Comment">
+        </form><br><br>
+    <% } %>
+</body>
+</html>
